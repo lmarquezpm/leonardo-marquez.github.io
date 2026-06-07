@@ -614,16 +614,105 @@ footer p { font-family:'DM Mono',monospace; font-size:10px; color:rgba(255,255,2
 .fade-in { opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease; }
 .fade-in.visible { opacity:1; transform:translateY(0); }
 
-@media(max-width:900px) {
-  .hero-inner { grid-template-columns:1fr; }
-  .hero-photo { display:flex; justify-content:center; order:-1; }
-  .photo-wrap { width:200px; height:230px; }
-  .about-grid { grid-template-columns:1fr; }
-  .stats { grid-template-columns:1fr 1fr; }
-  nav { padding:0 20px; }
-  .hero, .section, .section-full, .contact-section, footer { padding-left:20px; padding-right:20px; }
+/* ── TABLET (max 1024px) ─────────────────────────────────────────────────── */
+@media(max-width:1024px) {
+  .hero-inner { gap:40px; }
+  .photo-wrap { width:240px; height:280px; }
+  .projects-grid { grid-template-columns:repeat(auto-fill, minmax(280px,1fr)); }
+  .skills-grid { grid-template-columns:repeat(2,1fr); }
 }
-@media(max-width:480px) { .nav-links { display:none; } .stats { grid-template-columns:1fr 1fr; } }
+
+/* ── MOBILE LARGE (max 900px) ────────────────────────────────────────────── */
+@media(max-width:900px) {
+  nav { padding:0 20px; }
+  .nav-links { gap:16px; }
+  .nav-links a { font-size:12px; }
+
+  .hero { padding:90px 24px 48px; }
+  .hero-inner {
+    grid-template-columns:1fr;
+    gap:32px; text-align:center;
+  }
+  .hero-photo { display:flex; justify-content:center; order:-1; }
+  .photo-wrap { width:180px; height:210px; }
+  .photo-badge { font-size:11px; }
+  .hero-tag { justify-content:center; }
+  .hero-chips { justify-content:center; }
+  .hero-cta { justify-content:center; }
+
+  .stats { grid-template-columns:1fr 1fr; }
+  .stat-num { font-size:26px; }
+
+  .section { padding:60px 24px; }
+  .section-full { padding:60px 24px; }
+  .section-title { font-size:22px; }
+
+  .about-grid { grid-template-columns:1fr; gap:32px; }
+  .projects-grid { grid-template-columns:1fr; }
+  .skills-grid { grid-template-columns:1fr; }
+  .edu-grid { grid-template-columns:1fr; }
+
+  .timeline { padding-left:56px; }
+  .tl-icon { left:-52px; width:40px; height:40px; font-size:18px; }
+  .tl-dot { left:-25px; }
+  .tl-card { padding:18px 20px; }
+
+  .contact-section { padding:60px 24px; }
+  .contact-links { flex-direction:column; align-items:center; }
+
+  footer { padding:20px 24px; flex-direction:column; gap:8px; text-align:center; }
+}
+
+/* ── MOBILE SMALL (max 480px) ────────────────────────────────────────────── */
+@media(max-width:480px) {
+  .nav-links { display:none; }
+
+  .hero { padding:80px 16px 40px; }
+  .hero-name { font-size:42px; letter-spacing:-2px; }
+  .hero-title { font-size:15px; }
+  .photo-wrap { width:150px; height:175px; }
+  .photo-badge { display:none; }
+
+  .stats { grid-template-columns:1fr 1fr; padding:20px 16px; gap:0; }
+  .stat { padding:10px 8px; }
+  .stat-num { font-size:22px; }
+  .stat-label { font-size:8px; }
+
+  .section { padding:48px 16px; }
+  .section-full { padding:48px 16px; }
+  .section-title { font-size:20px; }
+
+  .project-card { padding:20px; }
+  .card-title { font-size:15px; }
+  .card-metrics { grid-template-columns:1fr 1fr; }
+
+  .skill-group { padding:18px; }
+  .skill-chips { gap:5px; }
+  .skill-chip { font-size:11px; padding:4px 10px; }
+
+  .timeline { padding-left:44px; }
+  .tl-icon { left:-40px; width:32px; height:32px; font-size:14px; }
+  .tl-dot { left:-20px; }
+  .tl-role { font-size:14px; }
+  .tl-bullets li { font-size:12px; }
+
+  .edu-card { padding:18px; }
+
+  .contact-title { font-size:28px; }
+  .contact-link { font-size:11px; padding:10px 18px; width:100%; justify-content:center; }
+
+  .btn-primary, .btn-secondary { width:100%; text-align:center; padding:13px 20px; }
+  .hero-cta { flex-direction:column; }
+}
+
+/* ── MOBILE XS (max 360px) ───────────────────────────────────────────────── */
+@media(max-width:360px) {
+  .hero-name { font-size:36px; }
+  .stats { grid-template-columns:1fr 1fr; }
+  .stat-num { font-size:20px; }
+  nav { padding:0 12px; }
+  .logo-name { display:none; }
+}
 </style>
 </head>
 <body>
@@ -958,7 +1047,7 @@ footer p { font-family:'DM Mono',monospace; font-size:10px; color:rgba(255,255,2
   <div class="contact-links">
     <a href="mailto:sebastianleonardo10@gmail.com" class="contact-link">✉ sebastianleonardo10@gmail.com</a>
     <a href="tel:+56984519799" class="contact-link">✆ +56 9 8451 9799</a>
-    <a href="https://www.linkedin.com/in/leonardo-marquez" target="_blank" class="contact-link">in LinkedIn</a>
+    <a href="https://www.linkedin.com/in/leonardo-marquez-b6ab33226" target="_blank" class="contact-link">in LinkedIn</a>
   </div>
 </div>
 
