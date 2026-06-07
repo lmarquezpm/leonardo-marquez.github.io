@@ -648,8 +648,30 @@ footer p { font-family:'DM Mono',monospace; font-size:10px; color:rgba(255,255,2
   .section-title { font-size:22px; }
 
   .about-grid { grid-template-columns:1fr; gap:32px; }
-  .projects-grid { grid-template-columns:1fr; }
-  .skills-grid { grid-template-columns:1fr; }
+  /* BACKGROUND IMAGES — desactivar fixed en móvil (no compatible) */
+  .section-full.projects-bg,
+  .section-full.skills-bg,
+  #experiencia {
+    background-attachment: scroll;
+    background-position: center center;
+  }
+
+  /* PROYECTOS */
+  .projects-grid { grid-template-columns:1fr; gap:16px; }
+  .project-card { padding:22px; }
+  .card-metrics { grid-template-columns:1fr 1fr; }
+
+  /* TRAYECTORIA */
+  .timeline { padding-left:60px; }
+  .tl-icon { left:-56px; width:44px; height:44px; font-size:20px; }
+  .tl-dot { left:-28px; }
+  .tl-card { padding:20px 22px; }
+  .tl-role { font-size:15px; }
+  .tl-item { padding-bottom:28px; }
+
+  /* HABILIDADES */
+  .skills-grid { grid-template-columns:1fr; gap:14px; }
+  .skill-group { padding:20px; }
   .edu-grid { grid-template-columns:1fr; }
 
   .timeline { padding-left:56px; }
@@ -682,21 +704,66 @@ footer p { font-family:'DM Mono',monospace; font-size:10px; color:rgba(255,255,2
   .section-full { padding:48px 16px; }
   .section-title { font-size:20px; }
 
-  .project-card { padding:20px; }
-  .card-title { font-size:15px; }
-  .card-metrics { grid-template-columns:1fr 1fr; }
+  /* BACKGROUND IMAGES MÓVIL — posición optimizada por sección */
+  .section-full.projects-bg {
+    background-position: center center;
+    background-size: cover;
+  }
+  .section-full.skills-bg {
+    background-position: center top;
+    background-size: cover;
+  }
+  #experiencia {
+    background-position: center center;
+    background-size: cover;
+  }
+  /* Overlay más oscuro en móvil para mejor legibilidad */
+  .section-full.projects-bg::before,
+  .section-full.skills-bg::before,
+  #experiencia::before {
+    background: linear-gradient(135deg,
+      rgba(5,12,30,0.92) 0%,
+      rgba(8,20,50,0.88) 50%,
+      rgba(5,12,30,0.92) 100%
+    );
+  }
 
-  .skill-group { padding:18px; }
+  /* PROYECTOS RESPONSIVE */
+  .projects-grid { grid-template-columns:1fr; gap:14px; }
+  .project-card { padding:18px; }
+  .card-title { font-size:14px; }
+  .card-desc { font-size:12px; }
+  .card-metrics { grid-template-columns:1fr 1fr; }
+  .metric-val { font-size:13px; }
+  .metric-label { font-size:7px; }
+  .card-badge { font-size:8px; padding:3px 8px; }
+  .card-tags { gap:4px; }
+  .tag { font-size:8px; padding:2px 7px; }
+
+  /* TRAYECTORIA RESPONSIVE */
+  .timeline { padding-left:40px; }
+  .timeline::before { left:16px; }
+  .tl-icon { left:-44px; width:32px; height:32px; font-size:15px; }
+  .tl-dot { left:-20px; top:20px; width:8px; height:8px; }
+  .tl-card { padding:16px 18px; }
+  .tl-role { font-size:14px; }
+  .tl-company { font-size:11px; }
+  .tl-bullets li { font-size:12px; line-height:1.6; }
+  .tl-date { font-size:9px; padding:2px 8px; }
+  .tl-tags { gap:4px; margin-top:12px; }
+  .tl-tag { font-size:8px; padding:3px 8px; }
+  .tl-item { padding-bottom:24px; }
+
+  /* HABILIDADES RESPONSIVE */
+  .skills-grid { grid-template-columns:1fr; gap:14px; }
+  .skill-group { padding:16px; }
+  .skill-group-title { font-size:9px; letter-spacing:1.5px; margin-bottom:12px; }
   .skill-chips { gap:5px; }
   .skill-chip { font-size:11px; padding:4px 10px; }
 
-  .timeline { padding-left:44px; }
-  .tl-icon { left:-40px; width:32px; height:32px; font-size:14px; }
-  .tl-dot { left:-20px; }
-  .tl-role { font-size:14px; }
-  .tl-bullets li { font-size:12px; }
-
   .edu-card { padding:18px; }
+  .edu-title { font-size:14px; }
+  .edu-inst { font-size:11px; }
 
   .contact-title { font-size:28px; }
   .contact-link { font-size:11px; padding:10px 18px; width:100%; justify-content:center; }
